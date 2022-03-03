@@ -21,8 +21,9 @@ namespace Movieshop.API.Controller
 
         [HttpGet]
         [Route("")]
-        // http://localhost:73434/api/movies?pagesize=30&page=2&title=ave
-        public  IActionResult GetMoviesByPagination([FromQuery] int pageSize = 30, [FromQuery] int page = 1, string title = "")
+        // http:/localhost:44344/api/movie 
+   
+        public IActionResult GetMoviesByPagination([FromQuery] int pageSize = 30, [FromQuery] int page = 1, string title = "")
         {
             var movies =  _movieService.GetMoviesByPagination(pageSize, page, title);
             if (movies == null || movies.Count == 0)

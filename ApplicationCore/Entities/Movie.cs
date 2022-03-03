@@ -12,13 +12,16 @@ namespace ApplicationCore.Entities
     public class Movie
     {
         public int Id { get; set; }
-        
-        [MaxLength(50)]
+
+        //change the datatype requirement for title 
+        [DataType(DataType.Text)]
+        [MaxLength(500)]
         [Column(TypeName ="varchar")]
         public string Title { get; set; }
-        [Column(TypeName = "varchar")]
-        [MaxLength(200)]
+
         public string? Overview { get; set; }
+
+
         public string? Tagline { get; set; }
         public decimal? Budget { get; set; }
         public decimal? Revenue { get; set; }
